@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{724D6780-5A70-48D3-9CC7-C5EC635E26A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamPainter</RootNamespace>
+    <AssemblyName>TeamPainter</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GraphCounter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\GraphCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="Nano3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nano3.dll</HintPath>
+    </Reference>
+    <Reference Include="Nano3Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nano3Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Canvas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Commands\ArgBrushObject.cs" />
+    <Compile Include="Commands\ArgDrawEllipse.cs" />
+    <Compile Include="Commands\ArgLineObject.cs" />
+    <Compile Include="Commands\ArgMoveObject.cs" />
+    <Compile Include="Commands\ArgNewPictureBox.cs" />
+    <Compile Include="Commands\ArgPictureBoxID.cs" />
+    <Compile Include="Commands\ArgRectObject.cs" />
+    <Compile Include="Commands\ArgSelectorCopyObject.cs" />
+    <Compile Include="Commands\ArgUniqueID.cs" />
+    <Compile Include="Commands\ComAutorize.cs" />
+    <Compile Include="Commands\ComDrawBrush.cs" />
+    <Compile Include="Commands\ComDrawByLine.cs" />
+    <Compile Include="Commands\ComDrawEllipse.cs" />
+    <Compile Include="Commands\ComDrawRect.cs" />
+    <Compile Include="Commands\ComMovePictureBox.cs" />
+    <Compile Include="Commands\ComNewCanvas.cs" />
+    <Compile Include="Commands\ComRemovePictureBox.cs" />
+    <Compile Include="Commands\ComSelectorCopy.cs" />
+    <Compile Include="Commands\ComSendClientID.cs" />
+    <Compile Include="Commands\ComSendNewPictureBoxObj.cs" />
+    <Compile Include="Commands\ComApplyPictureBox.cs" />
+    <Compile Include="ControlDisableImageCreator.cs" />
+    <Compile Include="Controls\FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FlatRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NetTrafficForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\NetTrafficForm.Designer.cs">
+      <DependentUpon>NetTrafficForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawObjectList.cs" />
+    <Compile Include="DrawObjects\BrushLineObject.cs" />
+    <Compile Include="DrawObjects\DrawObject.cs" />
+    <Compile Include="DrawObjects\EllipseObject.cs" />
+    <Compile Include="DrawObjects\LineObject.cs" />
+    <Compile Include="DrawObjects\MoveObject.cs" />
+    <Compile Include="DrawObjects\RectObject.cs" />
+    <Compile Include="DrawObjects\SelectorObject.cs" />
+    <Compile Include="LabelLogger.cs" />
+    <Compile Include="Controls\PictureBoxObj.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\IPaintTool.cs" />
+    <Compile Include="Tools\PBrushTool.cs" />
+    <Compile Include="Tools\PDrawEllipse.cs" />
+    <Compile Include="Tools\PDrawLine.cs" />
+    <Compile Include="Tools\PDrawRect.cs" />
+    <Compile Include="Tools\PMoveTool.cs" />
+    <Compile Include="Tools\PSelectorCopyRect.cs" />
+    <Compile Include="TPDrawer.cs" />
+    <Compile Include="ToolDrawer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\NetTrafficForm.resx">
+      <DependentUpon>NetTrafficForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
