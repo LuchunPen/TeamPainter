@@ -19,3 +19,5 @@ Client:
 - Send/Receive graph counter
 
 - Log panel
+
+![Image alt](https://github.com/LuchunPen/TeamPainter/blob/master/TeamPainterScreen.png)
